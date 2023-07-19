@@ -1,0 +1,35 @@
+#<src>                                     <mnt_point>           <type>  <mnt_flags and options>                       <fs_mgr_flags>
+system                                     /system                ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount
+system                                     /system                erofs   rw                                            wait,slotselect,logical,first_stage_mount
+system_ext                                 /system_ext            ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount
+system_ext                                 /system_ext            erofs   rw                                            wait,slotselect,logical,first_stage_mount
+product                                    /product               ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount
+product                                    /product               erofs   rw                                            wait,slotselect,logical,first_stage_mount
+vendor                                     /vendor                ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount
+vendor                                     /vendor                erofs   rw                                            wait,slotselect,logical,first_stage_mount
+odm                                        /odm                   ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount
+odm                                        /odm                   erofs   rw                                            wait,slotselect,logical,first_stage_mount
+my_product                                 /my_product            ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount
+my_product                                 /my_product            erofs   rw                                            wait,slotselect,logical,first_stage_mount
+my_company                                 /my_company            ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount,nofail
+my_company                                 /my_company            erofs   rw                                            wait,slotselect,logical,first_stage_mount,nofail
+my_carrier                                 /my_carrier            ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount,nofail
+my_carrier                                 /my_carrier            erofs   rw                                            wait,slotselect,logical,first_stage_mount,nofail
+my_region                                  /my_region             ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount,nofail
+my_region                                  /my_region             erofs   rw                                            wait,slotselect,logical,first_stage_mount,nofail
+my_bigball                                 /my_bigball            ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount,nofail
+my_bigball                                 /my_bigball            erofs   rw                                            wait,slotselect,logical,first_stage_mount,nofail
+my_heytap                                  /my_heytap             ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount,nofail
+my_heytap                                  /my_heytap             erofs   rw                                            wait,slotselect,logical,first_stage_mount,nofail
+my_stock                                   /my_stock              ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount,nofail
+my_stock                                   /my_stock              erofs   rw                                            wait,slotselect,logical,first_stage_mount,nofail
+my_preload                                 /my_preload            ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount,nofail
+my_preload                                 /my_preload            erofs   rw                                            wait,slotselect,logical,first_stage_mount,nofail
+my_manifest                                /my_manifest           ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount,nofail
+my_manifest                                /my_manifest           erofs   rw                                            wait,slotselect,logical,first_stage_mount,nofail
+my_engineering                             /my_engineering        ext4    rw,barrier=1                                  wait,slotselect,logical,first_stage_mount
+my_engineering                             /my_engineering        erofs   rw                                            wait,slotselect,logical,first_stage_mount
+
+/dev/block/by-name/metadata                /metadata              ext4    noatime,nosuid,nodev,discard                  wait,check,formattable,first_stage_mount
+/dev/block/bootdevice/by-name/userdata     /data                  f2fs    noatime,nosuid,nodev,discard,inlinecrypt,reserve_root=32768,resgid=1065,fsync_mode=nobarrier    latemount,resize,wait,check,formattable,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption,metadata_encryption=aes-256-xts:wrappedkey_v0,quota,reservedsize=128M,sysfs_path=/sys/devices/platform/soc/1d84000.ufshc,checkpoint=fs
+/dev/block/bootdevice/by-name/misc         /misc                  emmc    defaults                                      defaults
