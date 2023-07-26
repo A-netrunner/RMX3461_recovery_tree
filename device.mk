@@ -1,22 +1,16 @@
 # SHIPPING API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := RE54BFL1,RMX3461
-
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Userdata Checkpointing OTA GC
 PRODUCT_PACKAGES += \
     otapreopt_script \
-    cppreopts.sh \
+    checkpoint_gc \
     update_engine \
     update_engine_sideload \
     update_verifier
-	
-# Userdata Checkpointing OTA GC
-PRODUCT_PACKAGES += \
-    checkpoint_gc
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -34,13 +28,11 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-qti \
     android.hardware.boot@1.1-impl-qti.recovery \
-    android.hardware.boot@1.1-service \
     bootctrl.lahaina \
     bootctrl.lahaina.recovery
 
 # Fastbootd stuff
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0 \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
@@ -52,10 +44,6 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
-	
 # OEM otacerts
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(DEVICE_PATH)/security/local_OTA \
