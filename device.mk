@@ -5,7 +5,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Userdata Checkpointing OTA GC
-PRODUCT_PACKAGES +=\
+PRODUCT_PACKAGES += \
     otapreopt_script \
     checkpoint_gc \
     update_engine \
