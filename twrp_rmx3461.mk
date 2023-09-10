@@ -2,12 +2,12 @@
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := RMX3461
+PRODUCT_DEVICE := rmx3461
 PRODUCT_NAME := twrp_rmx3461
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme 9 5G SE
 PRODUCT_MANUFACTURER := realme
-PRODUCT_RELEASE_NAME := RMX3461
+PRODUCT_RELEASE_NAME := rmx3461
 
 # Default device path for tree
 DEVICE_PATH := device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)
